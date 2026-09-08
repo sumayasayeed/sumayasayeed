@@ -4,6 +4,6 @@
 
 <br/><br/>
 
-<img src="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/sumayasayeed/output/github-contribution-grid-snake.svg" alt="snake game" width="100%"/>
+<img src="https://raw.githubusercontent.com/sumayasayeed/sumayasayeed/output/github-contribution-grid-snake.svg" alt="snake game" width="100%"/>
 
 </div>
