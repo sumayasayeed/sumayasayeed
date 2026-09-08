@@ -2,7 +2,7 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # runs every 6 hours
+    - cron: "0 */6 * * *"
   workflow_dispatch: {}
   push:
     branches:
@@ -14,6 +14,8 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - name: Generate the snake game SVG
         uses: Platane/snk@v3
         with:
@@ -22,10 +24,9 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - name: Push output to "output" branch
-        uses: crazy-max/ghaction-github-pages@v4
+      - name: Push to output branch
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: output
+          folder: dist
+          token: ${{ secrets.GITHUB_TOKEN }}
